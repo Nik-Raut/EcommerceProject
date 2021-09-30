@@ -1,0 +1,30 @@
+{% extends 'Accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block block1 %}
+    <title>Seller Registraion Form</title>
+{% endblock %}
+
+
+{% block block2 %}
+
+<table>
+        <tr>
+            <th>Mobile_no</th>
+            <th>Seller Name</th>
+        </tr>
+        {% for i in user %}
+        <tr>
+            <td>{{i.user.mobile_no}}</td>
+            <td>{{i.company_name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+
+
+
+
+

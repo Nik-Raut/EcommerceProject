@@ -1,0 +1,28 @@
+{% extends 'Accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block block1 %}
+    <title>Seller login</title>
+{% endblock %}
+
+
+{% block block2 %}
+<div class="container">
+<form method="post" class="jumbotron">
+    {% csrf_token %}
+
+            <input type="number" name="mobile" placeholder="Enter Mobile No." class="form-control">
+            <br>
+            <input type="password" name="password" placeholder="Enter Password" class="form-control">
+            <br><br>
+
+    {% if messages %}
+            {% for msg in messages %}
+            {{ msg }}
+            {% endfor %}
+    {% endif %}
+
+    <input type="submit" value="Login">
+</form>
+    </div>
+{% endblock %}

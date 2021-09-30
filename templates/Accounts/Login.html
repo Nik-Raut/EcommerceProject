@@ -1,0 +1,32 @@
+{% extends 'Accounts/base2.html' %}
+{% load crispy_forms_tags %}
+
+{% block block1 %}
+    <title>login page</title>
+{% endblock %}
+
+
+{% block block2 %}
+<div class="container">
+<form method="post" class="jumbotron">
+    {% csrf_token %}
+<!--    I'm a <br>-->
+<!--    <input type="radio" id="one" name="user_profile" value="customer">-->
+<!--    <label for="one">Customer</label><br>-->
+<!--    <input type="radio" id="two" name="user_profile" value="seller">-->
+<!--    <label for="two">Seller</label><br>-->
+
+    Username:<input type="number" name="mobile" class="form-control" placeholder="Mobile Number"><br><br>
+    Password:<input type="password" name="ps" class="form-control"><br><br>
+
+
+    {% if messages %}
+            {% for msg in messages %}
+            {{ msg }}
+            {% endfor %}
+    {% endif %}
+
+    <input type="submit" value="Login">
+</form>
+    </div>
+{% endblock %}
